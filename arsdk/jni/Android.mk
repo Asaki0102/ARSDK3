@@ -11,6 +11,7 @@ include $(ZPATH)/prebuilts.mk
 
 include $(ZPATH)/../../../libARSAL/Android.mk
 include $(ZPATH)/../../../libARNetworkAL/Android.mk
+include $(ZPATH)/../../../libmux/android/src/main/jni/Android.mk
 include $(ZPATH)/../../../libARNetwork/Android.mk
 include $(ZPATH)/../../../libARCommands/Android.mk
 include $(ZPATH)/../../../libARStream/Android.mk

@@ -5,6 +5,10 @@ MY_ARCH_ABI := $(subst -,_,$(TARGET_ARCH_ABI))
 
 REL_PATH_LIBS := ../../../../out/Android-$(MY_ARCH_ABI)/staging/usr/lib
 REL_PATH_INCLUDE := ../../../../out/Android-$(MY_ARCH_ABI)/staging/usr/include
+# Alchemy sdk include path
+# This has been changed manually in a generated file.
+# Generator should be patched to accept different locations
+REL_SDK_INCLUDE_PATH := ../../../../out/Android-$(MY_ARCH_ABI)/sdk/usr/include
 
 # libARCommands
 include $(CLEAR_VARS)
@@ -56,6 +60,35 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libARSAL-prebuilt
 LOCAL_SRC_FILES := $(REL_PATH_LIBS)/libarsal.so
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(REL_PATH_INCLUDE)
+
+include $(PREBUILT_SHARED_LIBRARY)
+
+# libmux
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libmux-prebuilt
+LOCAL_SRC_FILES := $(REL_PATH_LIBS)/libmux.so
+#This has been changed manually in a generated file.
+#Generator should be patched to accept different locations
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(REL_SDK_INCLUDE_PATH)/libmux/include/
+
+include $(PREBUILT_SHARED_LIBRARY)
+
+# libulog
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libulog-prebuilt
+LOCAL_SRC_FILES := $(REL_PATH_LIBS)/libulog.so
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(REL_PATH_INCLUDE)
+
+include $(PREBUILT_SHARED_LIBRARY)
+
+# libpomp
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libpomp-prebuilt
+LOCAL_SRC_FILES := $(REL_PATH_LIBS)/libpomp.so
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/$(REL_PATH_INCLUDE)
 
 include $(PREBUILT_SHARED_LIBRARY)
