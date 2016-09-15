@@ -31,7 +31,6 @@ public class ARSDK
             System.loadLibrary("arcommands");
             System.loadLibrary("arcommands_android");
 
-            System.loadLibrary("ulog");
             System.loadLibrary("pomp");
             System.loadLibrary("mux");
             System.loadLibrary("mux_android");
