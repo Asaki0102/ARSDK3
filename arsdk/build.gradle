@@ -18,7 +18,8 @@ android {
     }
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
+            jni.srcDirs = [] // This prevents the auto generation of Android.mk
+            jniLibs.srcDir "${project.buildDir}/../../jni/arsdk/libs"
         }
     }
 
