@@ -17,7 +17,7 @@ public class ARSDK
         try
         {
             System.loadLibrary("curl");
-            System.loadLibrary("json");
+            System.loadLibrary("json-c");
 
             System.loadLibrary("arsal");
             System.loadLibrary("arsal_android");
