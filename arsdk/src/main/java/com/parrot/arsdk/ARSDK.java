@@ -53,6 +53,8 @@ public class ARSDK
             System.loadLibrary("armedia");
             System.loadLibrary("armedia_android");
 
+            System.loadLibrary("tar");
+            System.loadLibrary("puf");
 
             System.loadLibrary("arupdater");
             System.loadLibrary("arupdater_android");
